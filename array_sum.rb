@@ -1,6 +1,11 @@
 require 'colorize'
 require_relative 'assert'
 
+# Objetivo do exercício: criar um método chamado `sum` que some todos os itens
+# de uma lista de números.
+#
+# Um exemplo de implementação, feito durante a aula, pode ser encontrado dentro da
+# pasta `solved_exercises/array_sum.rb`.
 def sum(numbers)
 end
 

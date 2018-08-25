@@ -1,7 +1,6 @@
 # Encontre o maior número da lista
-numbers = [4, 79, 33, 18, 55]
-maior = 0
-numbers.each do |number|
-  maior = number if maior < number
-end
-puts "O maior número é #{maior}"
+
+# Objetivo do exercício: encontrar o maior número de uma lista de números.
+#
+# Um exemplo de implementação pode ser encontrado dentro da
+# pasta `solved_exercises/max_number_on_list.rb`.

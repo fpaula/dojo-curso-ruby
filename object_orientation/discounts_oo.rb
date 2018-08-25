@@ -2,8 +2,24 @@ require 'colorize'
 require_relative 'assert'
 require_relative 'shopping_cart'
 
-# shopping_cart = []
-# assert(ShoppingCart.new.calculate_price(shopping_cart), 0)
+# Objetivo: refazer o exercício do arquivo `discounts.rb` com orientação a
+# objetos. A lógica de cálculo de preço deve estar dentro de uma classe
+# chamada ShoppingCart e ela deve ser responsável por aplicar todos os descontos
+# propostos em aula.
+#
+# Os descontos são:
+#
+# * 10% de desconto se o preço total for superior a R$ 30,00
+# * 15% de desconto se o preço total for superior a R$ 60,00 (essa regra tem
+#   prioridade sobre a de cima, os descontos não são cumulativos)
+# * 20% de desconto se o preço total for superior a R$ 90,00 (essa regra tem
+#   prioridade sobre as de cima, os descontos não são cumulativos)
+# * Remover 4 reais do valor final caso haja duas ou mais pizzas no carrinho
+# * Oferecer um cupom de desconto caso o carrinho contenha 3 ou mais peças de
+#   vestuário.
+
+shopping_cart = []
+assert(ShoppingCart.new.calculate_price(shopping_cart), 0)
 
 shopping_cart = [
   { product: 'pizza 4 queijos', type: 'pizza', value: 20.0 },

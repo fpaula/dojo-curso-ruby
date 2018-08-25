@@ -1,3 +1,8 @@
+# Dada uma lista de dados (um array de hashes), encontrar a média de idade
+# e a linguagem favorita (que aparece mais vezes).
+
+# Um exemplo de implementação, feito durante a aula, pode ser encontrado dentro
+# da pasta `solved_exercises/average_age_and_best_language.rb`.
 data = [
   { age: 33, favorite_language: 'html' },
   { age: 20, favorite_language: 'php' },
@@ -5,17 +10,3 @@ data = [
   { age: 22, favorite_language: 'python' },
   { age: 21, favorite_language: 'c' }
 ]
-
-sum_age = 0
-favorite_language = {}
-favorite_language.default = 0
-data.each do |user_info|
-  age = user_info[:age]
-  sum_age = sum_age + age
-  language = user_info[:favorite_language]
-  favorite_language[language] += 1
-end
-
-puts "A média de idade é: #{sum_age / data.count}"
-puts "A linguagem mais legal é #{favorite_language.max.first}"
-puts "Mentira, é ruby!"
