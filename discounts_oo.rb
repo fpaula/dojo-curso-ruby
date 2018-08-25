@@ -1,21 +1,37 @@
 require 'colorize'
 require_relative 'assert'
+require_relative 'shopping_cart'
 
-shopping_cart = []
-assert(ShoppingCart.new(shopping_cart).total_price, 0)
+# shopping_cart = []
+# assert(ShoppingCart.new.calculate_price(shopping_cart), 0)
 
 shopping_cart = [
   { product: 'pizza 4 queijos', type: 'pizza', value: 20.0 },
   { product: 'refrigerante', type: 'bebida', value: 5.0 }
 ]
-assert(ShoppingCart.new(shopping_cart).total_price, 25.0)
+assert(ShoppingCart.new.calculate_price(shopping_cart), 25.0)
 
 shopping_cart = [
   { product: 'pizza 4 queijos', type: 'pizza', value: 20.0 },
   { product: 'refrigerante', type: 'bebida', value: 5.0 },
   { product: 'petit_gateau', type: 'sobremesa', value: 10.0 }
 ]
-assert(ShoppingCart.new(shopping_cart).total_price, 31.5) # 10% discount
+assert(ShoppingCart.new.calculate_price(shopping_cart), 31.5) # 10% discount
+
+shopping_cart = [
+  { product: 'pizza 4 queijos', type: 'pizza', value: 20.0 },
+  { product: 'refrigerante', type: 'bebida', value: 10.0 },
+  { product: 'petit_gateau', type: 'sobremesa', value: 50.0 }
+]
+assert(ShoppingCart.new.calculate_price(shopping_cart), 68) # 15% discount
+
+shopping_cart = [
+  { product: 'pizza 4 queijos', type: 'pizza', value: 20.0 },
+  { product: 'refrigerante', type: 'bebida', value: 10.0 },
+  { product: 'petit_gateau', type: 'sobremesa', value: 70.0 }
+]
+assert(ShoppingCart.new.calculate_price(shopping_cart), 80) # 20% discount
+
 
 shopping_cart = [
   { product: 'pizza 4 queijos', type: 'pizza', value: 20.0 },
@@ -23,11 +39,11 @@ shopping_cart = [
   { product: 'refrigerante', type: 'bebida', value: 5.0 },
   { product: 'sorvete', type: 'sobremesa', value: 10.0 }
 ]
-assert(ShoppingCart.new(shopping_cart).total_price, 41) # 10% discount - R$ 4,00
-
-shopping_cart = [
-  { product: 'Camisa azul', type: 'vestuário', value: 25.0 },
-  { product: 'Bermuda xadrez', type: 'vestuário', value: 15.0 },
-  { product: 'Meias', type: 'vestuário', value: 5.0 }
-]
-assert(ShoppingCart.new(shopping_cart).cupom, 0.3)
+assert(ShoppingCart.new.calculate_price(shopping_cart), 41) # 10% discount - R$ 4,00
+#
+# shopping_cart = [
+#   { product: 'Camisa azul', type: 'vestuário', value: 25.0 },
+#   { product: 'Bermuda xadrez', type: 'vestuário', value: 15.0 },
+#   { product: 'Meias', type: 'vestuário', value: 5.0 }
+# ]
+# assert(ShoppingCart.new(shopping_cart).cupom, 0.3)
