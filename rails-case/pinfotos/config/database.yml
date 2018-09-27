@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  database: ruby_dojo_development
+  password:
+  host: 192.168.99.100
+  pool: 5
+  port: 5432

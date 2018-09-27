@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>
+    Pinfotos!
+  </h1>
+
+  <div class="row">
+    <% @pictures.each do |picture| %>
+        <div class="col col-lg-4 col-sm-12">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="<%= picture.picture_url(@grayscale) %>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= picture.author %></h5>
+              <p class="card-text">
+                <a href="<%= picture.author_url %>" target="_blank">
+                  Veja a página do autor
+                </a>
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
